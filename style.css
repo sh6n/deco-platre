@@ -1,0 +1,91 @@
+/* Base Styles */
+body {
+    background-color: #FAFAF9;
+    color: #1c1c1c;
+    overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Before/After Slider */
+.comparison-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+.comparison-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.comparison-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=2070&auto=format&fit=crop'); /* AFTER Image (Salon Fini) */
+    background-size: cover;
+    background-position: center;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.1s ease-out;
+}
+.comparison-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #fff;
+    cursor: ew-resize;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comparison-circle {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c1c1c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+.comparison-handle:hover .comparison-circle {
+    transform: scale(1.1);
+}
+
+/* Custom Checkbox for GDPR */
+.checkbox-wrapper input:checked + div {
+    background-color: #F4D03F;
+    border-color: #F4D03F;
+}
+.checkbox-wrapper input:checked + div svg {
+    display: block;
+}
+
+/* Hover Reveal Image in Cards */
+.card-reveal-img {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.7s ease;
+}
+.group:hover .card-reveal-img {
+    opacity: 0.4;
+    transform: scale(1.05);
+}
+
+/* Custom Selection Color */
+::selection {
+    background: #F4D03F;
+    color: #1c1c1c;
+}
